@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://byduwyea1s2tf"]
+
+[ext_resource type="Texture2D" uid="uid://dswivf2io6lti" path="res://content/icon.svg" id="1_tkriv"]
+[ext_resource type="Script" uid="uid://c6g5f60txat08" path="res://content/interactibles/door/door_interaction_component.gd" id="2_gogmh"]
+[ext_resource type="Script" uid="uid://vgxw78g5328l" path="res://systems/interaction/selectable.gd" id="3_w47tw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2i0da"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gogmh"]
+size = Vector2(16, 16)
+
+[node name="Door" type="StaticBody2D" unique_id=718878180]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1630390418]
+shape = SubResource("RectangleShape2D_2i0da")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=195804292]
+scale = Vector2(0.125, 0.125)
+texture = ExtResource("1_tkriv")
+
+[node name="InteractiveCollision" type="Area2D" parent="." unique_id=1510633157]
+
+[node name="DoorInteractionComponent" type="Node" parent="InteractiveCollision" unique_id=1992148823 node_paths=PackedStringArray("collider")]
+script = ExtResource("2_gogmh")
+collider = NodePath("../../CollisionShape2D")
+interaction_id = &"open"
+metadata/_custom_type_script = "uid://c6g5f60txat08"
+
+[node name="SelectableComponent" type="Node" parent="InteractiveCollision" unique_id=1228861800 node_paths=PackedStringArray("interactibles")]
+script = ExtResource("3_w47tw")
+interactibles = [NodePath("../DoorInteractionComponent")]
+metadata/_custom_type_script = "uid://vgxw78g5328l"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractiveCollision" unique_id=1533094902]
+shape = SubResource("RectangleShape2D_gogmh")

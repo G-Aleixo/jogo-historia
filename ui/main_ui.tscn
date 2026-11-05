@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://xekhu1avbjhq"]
+
+[ext_resource type="PackedScene" uid="uid://byi8s5cqqvl18" path="res://ui/ingame_menu/ingame_menu.tscn" id="1_v5qxn"]
+
+[node name="MainUi" type="CanvasLayer" unique_id=1166313767]
+
+[node name="IngameMenu" parent="." unique_id=825227458 instance=ExtResource("1_v5qxn")]
+visible = false
+offset_top = -196.0
+offset_bottom = 196.0

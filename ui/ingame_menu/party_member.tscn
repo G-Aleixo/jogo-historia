@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://dblwtmhquwwqg"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_2i0da"]
+size = Vector2(128, 128)
+
+[node name="PartyMember" type="PanelContainer" unique_id=1911639921]
+offset_right = 451.0
+offset_bottom = 128.0
+size_flags_horizontal = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1828965564]
+layout_mode = 2
+
+[node name="Icon" type="TextureRect" parent="HBoxContainer" unique_id=1965338440]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = SubResource("PlaceholderTexture2D_2i0da")
+stretch_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer" unique_id=129749296]
+layout_mode = 2
+alignment = 1
+
+[node name="Name" type="Label" parent="HBoxContainer/VBoxContainer" unique_id=13462930]
+layout_mode = 2
+text = "NOME DO PERSONAGEM"
+
+[node name="Extra" type="Label" parent="HBoxContainer/VBoxContainer" unique_id=1810534578]
+layout_mode = 2
+text = "dados extras e os cara ai"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="HBoxContainer" unique_id=2004613851]
+layout_mode = 2
+alignment = 1
+
+[node name="Health" type="Label" parent="HBoxContainer/VBoxContainer2" unique_id=1238630920]
+layout_mode = 2
+text = "barra de vida"
+
+[node name="HSlider" type="HSlider" parent="HBoxContainer/VBoxContainer2" unique_id=1247837536]
+layout_mode = 2
+value = 100.0
+rounded = true
+editable = false
+scrollable = false
+tick_count = 10
+ticks_on_borders = true
+
+[node name="Health2" type="Label" parent="HBoxContainer/VBoxContainer2" unique_id=2002537265]
+layout_mode = 2
+text = "barra de vida v2"
+
+[node name="HSlider2" type="HSlider" parent="HBoxContainer/VBoxContainer2" unique_id=951693179]
+layout_mode = 2
+value = 100.0
+rounded = true
+editable = false
+scrollable = false
+tick_count = 10
+ticks_on_borders = true

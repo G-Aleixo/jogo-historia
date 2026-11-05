@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://c30v1e2j314yn"]
+
+[ext_resource type="Script" uid="uid://bktv0x30jihgi" path="res://content/interactibles/confetti_spawner/confetti_spawner_interaction_component.gd" id="1_5vblu"]
+[ext_resource type="Texture2D" uid="uid://dswivf2io6lti" path="res://content/icon.svg" id="2_iet6w"]
+[ext_resource type="Script" uid="uid://vgxw78g5328l" path="res://systems/interaction/selectable.gd" id="3_abfdk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dstyb"]
+size = Vector2(16, 16)
+
+[sub_resource type="Gradient" id="Gradient_dstyb"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_dstyb"]
+gradient = SubResource("Gradient_dstyb")
+width = 2
+
+[node name="ConfettiSpawner" type="StaticBody2D" unique_id=1452944742]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=553616456]
+scale = Vector2(0.125, 0.125)
+texture = ExtResource("2_iet6w")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=416576831]
+shape = SubResource("RectangleShape2D_dstyb")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=1769185449]
+emitting = false
+amount = 64
+texture = SubResource("GradientTexture1D_dstyb")
+lifetime = 0.5
+one_shot = true
+direction = Vector2(0, -1)
+spread = 15.0
+initial_velocity_min = 200.0
+initial_velocity_max = 400.0
+angular_velocity_min = -200.0
+angular_velocity_max = 200.0
+
+[node name="ConfettiSpawnerInteractionComponent" type="Node" parent="." unique_id=774427361 node_paths=PackedStringArray("emitter")]
+script = ExtResource("1_5vblu")
+emitter = NodePath("../CPUParticles2D")
+interaction_id = &"use"
+metadata/_custom_type_script = "uid://bktv0x30jihgi"
+
+[node name="SelectableComponent" type="Node" parent="." unique_id=1257084369 node_paths=PackedStringArray("interactibles")]
+script = ExtResource("3_abfdk")
+interactibles = [NodePath("../ConfettiSpawnerInteractionComponent")]
+metadata/_custom_type_script = "uid://vgxw78g5328l"

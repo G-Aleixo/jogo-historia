@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://btb3k0kvxe8xx"]
+
+[ext_resource type="PackedScene" uid="uid://dblwtmhquwwqg" path="res://ui/ingame_menu/party_member.tscn" id="1_qos5r"]
+
+[node name="PartyPanel" type="PanelContainer" unique_id=663114393]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=342969303]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1560870090]
+layout_mode = 2
+
+[node name="PartyMember" parent="MarginContainer/VBoxContainer" unique_id=1643660749 instance=ExtResource("1_qos5r")]
+layout_mode = 2
+
+[node name="PartyMember2" parent="MarginContainer/VBoxContainer" unique_id=979970186 instance=ExtResource("1_qos5r")]
+layout_mode = 2
+
+[node name="PartyMember3" parent="MarginContainer/VBoxContainer" unique_id=1911639921 instance=ExtResource("1_qos5r")]
+layout_mode = 2
