@@ -15,8 +15,16 @@ extends SerdeJSON
 @export_category("Extra data")
 @export var extra_data: Dictionary
 
+# these shouldn't be the actual percentages, probably add some function to turn these 0-100+
+# into the actual percentages later on.
 @export_category("Combat")
 @export var moral: int = 100
+@export var base_defense: int = 50
+@export var base_agility: int = 50
+@export var base_dodge: int = 50
+@export var base_accuracy: int = 50
+@export var base_luck: int = 50
+@export var base_intellect: int = 50
 
 
 func serialize() -> Dictionary:
