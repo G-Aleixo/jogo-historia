@@ -22,7 +22,7 @@ CameraController="*uid://bjlnfaufvaxl2"
 PartySystem="*uid://q4yxyxnbgyhp"
 SavingSystem="*uid://cr33s4f0rlp4r"
 MainUi="*uid://xekhu1avbjhq"
-FocusingSystem="*uid://su8ncb05ibjg"
+StateSystem="*uid://su8ncb05ibjg"
 
 [display]
 

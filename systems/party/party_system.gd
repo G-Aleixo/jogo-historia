@@ -5,6 +5,14 @@ signal party_member_added
 
 var party_members: Array[PartyMemberData]
 
+@onready var battle_controller: BattleController = $BattleController
+
+func begin_combat(enemies: Array[PartyMemberData]) -> void:
+	battle_controller.start_battle(
+		PartySystem.party_members,
+		enemies
+	)
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	SavingSystem.to_save.append(self)

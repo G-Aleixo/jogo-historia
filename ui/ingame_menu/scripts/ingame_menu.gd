@@ -10,13 +10,13 @@ func _ready() -> void:
 	exit_button.pressed.connect(_on_exit_button_pressed)
 
 func _process(_delta: float) -> void:
+	#TODO: move this to a proper menu system and user input  system to just listen to the state signals
 	if Input.is_action_just_pressed("menu"):
-		is_shown = not is_shown
-		print(is_shown)
-		visible = is_shown
-		FocusingSystem.can_move = not is_shown
-		
-		# emit something to make the player stop moving
+		if StateSystem.game_state == StateSystem.GameState.IN_GAME:
+			visible = true
+			StateSystem.game_state = StateSystem.GameState.GAME_MENU
+		elif StateSystem.game_state == StateSystem.GameState.GAME_MENU:
+			visible = false
 
 func _on_save_button_pressed():
 	SavingSystem.save_save()

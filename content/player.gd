@@ -10,7 +10,7 @@ func _ready() -> void:
 func _physics_process(_delta: float) -> void:
 	var direction := Input.get_vector("left", "right", "up", "down")
 	
-	if not FocusingSystem.can_move:
+	if StateSystem.game_state != StateSystem.GameState.IN_GAME:
 		direction = Vector2.ZERO
 	
 	if direction:

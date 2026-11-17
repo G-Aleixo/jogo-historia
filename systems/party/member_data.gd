@@ -13,6 +13,8 @@ extends SerdeJSON
 @export_category("Extra data")
 @export var extra_data: Dictionary
 
+@export_category("Combat")
+
 func serialize() -> Dictionary:
 	return {
 		"id": id,
