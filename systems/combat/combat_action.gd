@@ -26,7 +26,7 @@ enum TargetType {
 @export var action_type: ActionType
 @export var target_type: TargetType
 
-@export var ap_cost: int = 1 # moral
+@export var ap_cost: int = 10 # moral
 @export var priority: int = 0
 
 func can_execute(context: CombatContext) -> bool:

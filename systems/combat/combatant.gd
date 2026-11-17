@@ -10,8 +10,7 @@ var party_data: PartyMemberData
 
 var is_player_controlled: bool = false
 
-var action_points: int = 2
-var max_action_points: int = 2
+var action_points: int = 100
 
 var is_defending: bool = false
 
@@ -33,5 +32,5 @@ func is_incapacitated() -> bool:
 	return party_data == null or party_data.is_incapacitated()
 
 func reset_turn() -> void:
-	action_points = max_action_points
+	action_points = party_data.moral
 	is_defending = false

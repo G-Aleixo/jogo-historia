@@ -4,6 +4,8 @@ extends SerdeJSON
 @export var id: StringName
 @export_placeholder("No Name Set") var display_name: String
 
+@export var hunger: int = 0
+
 @export_category("Health")
 @export_range(0, 100, 1) var head_health: int = 100
 @export_range(0, 100, 1) var torso_health: int = 100
@@ -14,6 +16,8 @@ extends SerdeJSON
 @export var extra_data: Dictionary
 
 @export_category("Combat")
+@export var moral: int = 100
+
 
 func serialize() -> Dictionary:
 	return {
