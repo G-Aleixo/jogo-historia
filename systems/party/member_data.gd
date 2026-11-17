@@ -26,6 +26,17 @@ extends SerdeJSON
 @export var base_luck: int = 50
 @export var base_intellect: int = 50
 
+@export_category("Equipment")
+@export var head: Equipable
+@export var torso: Equipable
+@export var hands: Equipable
+@export var legs: Equipable
+@export var feet: Equipable
+
+@export var weapon: Equipable
+
+@export_category("Effects")
+@export var effects: Array[Effect]
 
 func serialize() -> Dictionary:
 	return {

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="SimpleEffect" format=3 uid="uid://3m0kyv08wbmt"]
+
+[ext_resource type="Script" uid="uid://caewdwr5chngb" path="res://systems/combat/definitions/simple_effect.gd" id="1_yxhbq"]
+
+[resource]
+script = ExtResource("1_yxhbq")
+defense_modifier = -20
+agility_modifier = -20
+dodge_modifier = -20
+accuracy_modifier = -20
+luck_modifier = -20
+intellect_modifier = -20
+is_debuff = true
+metadata/_custom_type_script = "uid://caewdwr5chngb"
