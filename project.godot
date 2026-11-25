@@ -23,6 +23,7 @@ PartySystem="*uid://q4yxyxnbgyhp"
 SavingSystem="*uid://cr33s4f0rlp4r"
 MainUi="*uid://xekhu1avbjhq"
 StateSystem="*uid://su8ncb05ibjg"
+FollowSystem="*uid://cad85flwav65n"
 
 [display]
 

@@ -4,6 +4,9 @@
 [ext_resource type="PackedScene" uid="uid://b7hwum0o7xpta" path="res://content/player.tscn" id="2_ejy23"]
 [ext_resource type="PackedScene" uid="uid://byduwyea1s2tf" path="res://content/interactibles/door/door.tscn" id="2_hsie3"]
 [ext_resource type="PackedScene" uid="uid://c30v1e2j314yn" path="res://content/interactibles/confetti_spawner/confetti_spawner.tscn" id="3_1tb2a"]
+[ext_resource type="Script" uid="uid://baqg7cv0t1vw6" path="res://systems/follow/leader.gd" id="4_x2dil"]
+[ext_resource type="Texture2D" uid="uid://dswivf2io6lti" path="res://content/icon.svg" id="5_w4l4h"]
+[ext_resource type="Script" uid="uid://usnpmtgc1fuj" path="res://systems/follow/follower.gd" id="6_x2dil"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ejy23"]
 texture = ExtResource("1_cca56")
@@ -228,5 +231,50 @@ tile_set = SubResource("TileSet_2i0da")
 [node name="Player" parent="." unique_id=634734251 instance=ExtResource("2_ejy23")]
 position = Vector2(0, -16)
 
+[node name="FollowLeaderComponent" type="Node" parent="Player" unique_id=1074502980 node_paths=PackedStringArray("leader_node")]
+script = ExtResource("4_x2dil")
+leader_node = NodePath("..")
+metadata/_custom_type_script = "uid://baqg7cv0t1vw6"
+
 [node name="ConfettiSpawner" parent="." unique_id=1452944742 instance=ExtResource("3_1tb2a")]
 position = Vector2(68, -4)
+
+[node name="FollowerTest" type="Sprite2D" parent="." unique_id=678189143]
+scale = Vector2(0.125, 0.125)
+texture = ExtResource("5_w4l4h")
+
+[node name="FollowFollowerComponent" type="Node" parent="FollowerTest" unique_id=783781584 node_paths=PackedStringArray("follower_node")]
+script = ExtResource("6_x2dil")
+index = 1
+follower_node = NodePath("..")
+metadata/_custom_type_script = "uid://usnpmtgc1fuj"
+
+[node name="FollowerTest2" type="Sprite2D" parent="." unique_id=1981985363]
+scale = Vector2(0.125, 0.125)
+texture = ExtResource("5_w4l4h")
+
+[node name="FollowFollowerComponent" type="Node" parent="FollowerTest2" unique_id=1463041856 node_paths=PackedStringArray("follower_node")]
+script = ExtResource("6_x2dil")
+index = 2
+follower_node = NodePath("..")
+metadata/_custom_type_script = "uid://usnpmtgc1fuj"
+
+[node name="FollowerTest3" type="Sprite2D" parent="." unique_id=2049922761]
+scale = Vector2(0.125, 0.125)
+texture = ExtResource("5_w4l4h")
+
+[node name="FollowFollowerComponent" type="Node" parent="FollowerTest3" unique_id=1895631565 node_paths=PackedStringArray("follower_node")]
+script = ExtResource("6_x2dil")
+index = 3
+follower_node = NodePath("..")
+metadata/_custom_type_script = "uid://usnpmtgc1fuj"
+
+[node name="FollowerTest4" type="Sprite2D" parent="." unique_id=774903750]
+scale = Vector2(0.125, 0.125)
+texture = ExtResource("5_w4l4h")
+
+[node name="FollowFollowerComponent" type="Node" parent="FollowerTest4" unique_id=1814782441 node_paths=PackedStringArray("follower_node")]
+script = ExtResource("6_x2dil")
+index = 4
+follower_node = NodePath("..")
+metadata/_custom_type_script = "uid://usnpmtgc1fuj"
